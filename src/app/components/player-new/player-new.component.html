@@ -1,0 +1,118 @@
+<!--  
+ Copyright 2019 Ignacio Loyola @nodonade.com
+ Version 0.1 (Working first step blog) 
+-->
+
+<div class="col-md-12 mt-3">
+    <h1>Añadir/Editar Jugador</h1>
+    <p>
+      Añade/Edita los datos de un jugador
+    </p>
+  
+    <p *ngIf="player">
+      Modifica el player {{ player.nombre }}
+    </p>
+    <hr>
+  
+      <!-- Create entry form -->
+  
+      <form class ="col-md-5 ml-0 pl-0" #playerNew="ngForm" (ngSubmit)="onSubmit(playerNew)">
+  
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="player.nombre" class="form-control" required/>
+  
+          <small *ngIf="!nombre.valid && nombre.touched" class="invalid-feedback d-block">
+            El nombre no es válido.
+          </small>
+        </div>
+
+        <input [matDatepicker]="myDatepicker">
+        <mat-datepicker-toggle [for]="myDatepicker"></mat-datepicker-toggle>
+        <mat-datepicker #myDatepicker></mat-datepicker>
+
+        <div class="form-group">
+            <label for="ciudad">Ciudad</label>
+            <input type="text" name="ciudad" #ciudad="ngModel" [(ngModel)]="player.ciudad" class="form-control" required/>
+    
+            <small *ngIf="!ciudad.valid && ciudad.touched" class="invalid-feedback d-block">
+              La ciudad no es válida.
+            </small>
+        </div>
+
+        <div class="form-group">
+            <label for="cedula">Cédula</label>
+            <input type="text" name="cedula" #cedula="ngModel" [(ngModel)]="player.cedula" class="form-control" required/>
+    
+            <small *ngIf="!cedula.valid && cedula.touched" class="invalid-feedback d-block">
+              La cédula no es válida.
+            </small>
+        </div>
+
+        <div class="form-group">
+            <label for="cedula">Cédula</label>
+            <input type="text" name="cedula" #cedula="ngModel" [(ngModel)]="player.cedula" class="form-control" required/>
+    
+            <small *ngIf="!cedula.valid && cedula.touched" class="invalid-feedback d-block">
+              La cédula no es válida.
+            </small>
+        </div>
+
+        <div class="form-group">
+            <label for="altura">Altura</label>
+            <input type="text" name="altura" #altura="ngModel" [(ngModel)]="player.altura" class="form-control" required/>
+    
+            <small *ngIf="!altura.valid && altura.touched" class="invalid-feedback d-block">
+              La altura no es válida.
+            </small>
+        </div>
+
+        
+        <div class="form-group">
+            <label for="peso">Peso</label>
+            <input type="text" name="peso" #peso="ngModel" [(ngModel)]="player.peso" class="form-control" required/>
+    
+            <small *ngIf="!peso.valid && peso.touched" class="invalid-feedback d-block">
+              El peso no es válido.
+            </small>
+        </div>
+        
+        <div class="form-group">
+            <label for="camiseta">Camiseta</label>
+            <input type="text" name="camiseta" #camiseta="ngModel" [(ngModel)]="player.camiseta" class="form-control" required/>
+    
+            <small *ngIf="!camiseta.valid && camiseta.touched" class="invalid-feedback d-block">
+              La camiseta no es válida.
+            </small>
+        </div>
+
+        <div class="form-group">
+            <label for="posicion">Posicion</label>
+            <input type="text" name="posicion" #posicion="ngModel" [(ngModel)]="player.posicion" class="form-control" required/>
+    
+            <small *ngIf="!posicion.valid && posicion.touched" class="invalid-feedback d-block">
+              La posición no es válida.
+            </small>
+        </div>
+
+
+  
+        <div class="form-group">
+  
+          <label for="image">Imagen</label>
+  
+          <div *ngIf="is_edit && player.image">
+            <img src="{{player.photoURL}}" class="w-100"/>
+          </div>
+  
+          <input type="file" (change)="upload($event)" accept=".png,.jpg" #image/>
+  
+        </div>
+  
+        <input type="submit" value="Guardar" class="btn" [disabled]="playerNew.invalid">
+  
+      </form>
+  
+      <br/>
+  
+  </div>

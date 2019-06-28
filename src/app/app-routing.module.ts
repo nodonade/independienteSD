@@ -18,6 +18,7 @@ import { ErrorComponent } from './components/error/error.component';
 import { HomeComponent } from './components/home/home.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
+import { PlayerComponent } from './components/player/player.component';
 
 // Basic imports
 import { NgModule } from '@angular/core';
@@ -26,6 +27,9 @@ import { Routes, RouterModule } from '@angular/router';
 // Import canActivate guard services
 import { AuthGuard } from './services/guard/auth.guard';
 import { SecureInnerPagesGuard } from './services/guard/secure-inner-pages.guard';
+import { PlayerListComponent } from './components/player-list/player-list.component';
+import { PlayerNewComponent } from './components/player-new/player-new.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: '/inicio', pathMatch: 'full'},
@@ -46,6 +50,9 @@ const routes: Routes = [
   { path: 'registro', component: RegisterComponent, /* canActivate: [SecureInnerPagesGuard] */},
   { path: 'forgot-password', component: ForgotPasswordComponent, /* canActivate: [SecureInnerPagesGuard]  */},
   { path: 'verify-email-address', component: VerifyEmailComponent, /* canActivate: [SecureInnerPagesGuard] */},
+
+  { path: 'jugadores', component: PlayerListComponent},
+  { path: 'crear-jugador', component: PlayerNewComponent},
 
   { path: 'error', component: ErrorComponent },
   { path: '**', component: ErrorComponent }

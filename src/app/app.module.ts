@@ -43,6 +43,13 @@ import { PostEditComponent } from './components/post-edit/post-edit.component';
 import { CategoryDetailComponent } from './components/category-detail/category-detail.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { PostListComponent } from './components/post-list/post-list.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+// Angular Material
+import { MatTableModule, MatIconModule, MatDatepickerModule, MatNativeDateModule } from '@angular/material';
+import { PlayerComponent } from './components/player/player.component';
+import { PlayerListComponent } from './components/player-list/player-list.component';
+import { PlayerNewComponent } from './components/player-new/player-new.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +67,10 @@ import { PostListComponent } from './components/post-list/post-list.component';
     PostEditComponent,
     CategoryDetailComponent,
     ProfileComponent,
-    PostListComponent
+    PostListComponent,
+    PlayerComponent,
+    PlayerListComponent,
+    PlayerNewComponent
   ],
   imports: [
     BrowserModule,
@@ -73,7 +83,12 @@ import { PostListComponent } from './components/post-list/post-list.component';
     AngularFireAuthModule, // imports firebase auth for authentication
     AngularFireStorageModule,
     FroalaEditorModule.forRoot(),
-    FroalaViewModule.forRoot()
+    FroalaViewModule.forRoot(),
+    BrowserAnimationsModule,
+    MatTableModule,
+    MatIconModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
   providers: [
     AuthenticationService,

@@ -1,11 +1,12 @@
 export const environment = {
   production: true,
   firebase: {
-    apiKey: "AIzaSyC_jZIbZtlru0BYmtrRL1e7zI7AbrIluvY",
-    authDomain: "nodonade.firebaseapp.com",
-    databaseURL: "https://nodonade.firebaseio.com",
-    projectId: "nodonade",
-    storageBucket: "nodonade.appspot.com",
-    messagingSenderId: "13368690447"
+    apiKey: "AIzaSyDLHxUJKP2LGXmhfKGG9D29db0z4O7znc0",
+    authDomain: "independientesto.firebaseapp.com",
+    databaseURL: "https://independientesto.firebaseio.com",
+    projectId: "independientesto",
+    storageBucket: "independientesto.appspot.com",
+    messagingSenderId: "126632904079",
+    appId: "1:126632904079:web:de376d28ed2a1314"  
   }
 };
