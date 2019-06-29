@@ -38,9 +38,9 @@
 
         <label for="fechaNacimiento">Fecha de nacimiento</label>
         <br/>
-        <input [matDatepicker]="myDatepicker" name="fechaNacimiento" #fechaNacimiento="ngModel" [(ngModel)]="player.fechaNacimiento" required>
+        <input [matDatepicker]="myDatepicker" name="fechaNacimiento" #fechaNacimiento="ngModel" [(ngModel)]="player.fechaNacimiento" date="DD/MM/YYYY" required>
         <mat-datepicker-toggle [for]="myDatepicker"></mat-datepicker-toggle>
-        <mat-datepicker #myDatepicker></mat-datepicker> 
+        <mat-datepicker #myDatepicker ></mat-datepicker> 
 
         
 

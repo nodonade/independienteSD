@@ -8,7 +8,7 @@ import { PlayerService } from './../../services/player.service';
 
 import { Player } from './../../models/player';
 
-import { MatTableDataSource, MatSort } from '@angular/material';
+import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
 
 @Component({
   selector: 'app-player-list',
@@ -24,6 +24,7 @@ export class PlayerListComponent implements OnInit {
   public dataSource = new MatTableDataSource<Player>();
 
   @ViewChild(MatSort, {static: false}) sort: MatSort;
+  @ViewChild(MatPaginator, {static: false}) paginator: MatPaginator;
 
   constructor(
     private _playerService: PlayerService,
@@ -35,6 +36,7 @@ export class PlayerListComponent implements OnInit {
 
   ngAfterViewInit(): void {
     this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
   }
 
   readPlayers(){
@@ -53,5 +55,9 @@ export class PlayerListComponent implements OnInit {
       response => {
         this.readPlayers();
     })
+  }
+
+  public doFilter = (value: string) => {
+    this.dataSource.filter = value.trim().toLocaleLowerCase();
   }
 }

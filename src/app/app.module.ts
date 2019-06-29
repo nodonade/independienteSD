@@ -46,11 +46,13 @@ import { PostListComponent } from './components/post-list/post-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Angular Material
-import { MatTableModule, MatIconModule, MatDatepickerModule, MatNativeDateModule, MatFormField, MatFormFieldModule, MatInputModule, MatSortModule } from '@angular/material';
+import { MatPaginatorModule ,MatTableModule, MatIconModule, MatDatepickerModule, MatNativeDateModule, MatFormFieldModule, MatSortModule, MatInputModule } from '@angular/material';
 import { PlayerComponent } from './components/player/player.component';
 import { PlayerListComponent } from './components/player-list/player-list.component';
 import { PlayerNewComponent } from './components/player-new/player-new.component';
 import { EditPlayerComponent } from './components/edit-player/edit-player.component';
+
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -94,6 +96,9 @@ import { EditPlayerComponent } from './components/edit-player/edit-player.compon
     MatDatepickerModule,
     MatNativeDateModule,
     MatSortModule,
+    MatInputModule,
+    FlexLayoutModule,
+    MatPaginatorModule,
   ],
   providers: [
     AuthenticationService,
