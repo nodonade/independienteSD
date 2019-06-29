@@ -8,7 +8,6 @@
 import { Router, ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
-import { PostService } from './../../services/post.service';
 import { UserService } from './../../services/user.service';
 
 
@@ -16,7 +15,7 @@ import { UserService } from './../../services/user.service';
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss'],
-  providers: [PostService, UserService]
+  providers: [UserService]
 })
 export class ProfileComponent implements OnInit {
 
@@ -26,7 +25,6 @@ export class ProfileComponent implements OnInit {
   public token;
 
   constructor(
-    private _postService: PostService,
     private _userService: UserService,
     private _route: ActivatedRoute,
     private _router: Router,
@@ -48,27 +46,8 @@ export class ProfileComponent implements OnInit {
       let userId = params['id'];
 
       this.readUser(userId);
-      this.readPosts(userId);
     })
     
-  }
-
-  readPosts(userId){
-    this._postService.readPostsByUser(userId).subscribe(
-      response => {
-        this.posts = response;
-      },
-      error => {
-        console.log(error);
-      }
-    )
-  }
-
-  deletePost(id) {
-    this._postService.deletePost(id).then(
-      response => {
-        this.readProfile();
-    })
   }
 
 }

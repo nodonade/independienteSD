@@ -23,8 +23,6 @@ import { environment } from '../environments/environment';
 import { FirestoreSettingsToken} from '@angular/fire/firestore';
 // import * as firebase from 'firebase';  //No lo uso
 
-// Froala text editor
-import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
 
 // Components
 import { AppComponent } from './app.component';
@@ -32,21 +30,13 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { ErrorComponent } from './components/error/error.component';
-import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
-import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
-import { UserEditComponent } from './components/user-edit/user-edit.component';
-import { CategoryNewComponent } from './components/category-new/category-new.component';
-import { PostNewComponent } from './components/post-new/post-new.component';
 import { AngularFireStorageModule } from 'angularfire2/storage';
-import { PostDetailComponent } from './components/post-detail/post-detail.component';
-import { PostEditComponent } from './components/post-edit/post-edit.component';
-import { CategoryDetailComponent } from './components/category-detail/category-detail.component';
-import { ProfileComponent } from './components/profile/profile.component';
-import { PostListComponent } from './components/post-list/post-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Angular Material
-import { MatPaginatorModule ,MatTableModule, MatIconModule, MatDatepickerModule, MatNativeDateModule, MatFormFieldModule, MatSortModule, MatInputModule } from '@angular/material';
+import { MatPaginatorModule ,MatTableModule, MatIconModule, 
+  MatDatepickerModule, MatNativeDateModule, MatFormFieldModule, 
+  MatSortModule, MatInputModule } from '@angular/material';
 import { PlayerComponent } from './components/player/player.component';
 import { PlayerListComponent } from './components/player-list/player-list.component';
 import { PlayerNewComponent } from './components/player-new/player-new.component';
@@ -61,16 +51,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     RegisterComponent,
     HomeComponent,
     ErrorComponent,
-    ForgotPasswordComponent,
-    VerifyEmailComponent,
-    UserEditComponent,
-    CategoryNewComponent,
-    PostNewComponent,
-    PostDetailComponent,
-    PostEditComponent,
-    CategoryDetailComponent,
-    ProfileComponent,
-    PostListComponent,
     PlayerComponent,
     PlayerListComponent,
     PlayerNewComponent,
@@ -86,8 +66,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     AngularFirestoreModule, // imports firestore for using database
     AngularFireAuthModule, // imports firebase auth for authentication
     AngularFireStorageModule,
-    FroalaEditorModule.forRoot(),
-    FroalaViewModule.forRoot(),
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatInputModule,

@@ -4,7 +4,6 @@
  */
 
 import { UserService } from './../../services/user.service';
-import { PostService } from './../../services/post.service';
 
 import { Component, OnInit } from '@angular/core';
 
@@ -12,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-  providers: [PostService, UserService]
+  providers: [UserService]
 })
 export class HomeComponent implements OnInit {
 
@@ -22,7 +21,6 @@ export class HomeComponent implements OnInit {
   public token;
 
   constructor(
-    private _postService: PostService,
     private _userService: UserService
   ) {
     this.page_title = 'Inicio';
@@ -31,24 +29,7 @@ export class HomeComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.readPosts();
+  
   }
 
-  readPosts(){
-    this._postService.readPosts().subscribe(
-      response => {
-        this.posts = response;
-      },
-      error => {
-        console.log(error);
-      }
-    )
-  }
-
-  deletePost(id) {
-    this._postService.deletePost(id).then(
-      response => {
-        this.readPosts();
-    })
-  }
 }
