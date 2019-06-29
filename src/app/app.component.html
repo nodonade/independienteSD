@@ -13,8 +13,8 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> 
 
     <a class="navbar-brand" [routerLink]="['/inicio']">
-      <img src="assets/img/logo-angular.svg" class="angular-logo">
-      NodoNade
+      <img src="assets/img/logo-angular.png" class="angular-logo">
+      Club Independiente Santo Domingo
     </a>
 
     <!-- Button that is only shown when the screen is small -->
@@ -28,8 +28,8 @@
         <li class="nav-item active">
           <a class="nav-link" [routerLink]="['/inicio']">Inicio <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item" *ngFor="let category of categories">
-          <a class="nav-link" [routerLink]="['categoria', category.id]">{{category.name}}</a>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/jugadores']">Jugadores</a>
         </li>
       </ul>
 

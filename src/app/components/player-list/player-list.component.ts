@@ -1,3 +1,7 @@
+/* 
+ * Copyright 2019 Ignacio Loyola @nodonade.com
+ * Version 0.1 (Working first step blog)
+ */
 import { Component, OnInit, Input } from '@angular/core';
 
 import { PlayerService } from './../../services/player.service';
@@ -15,7 +19,7 @@ export class PlayerListComponent implements OnInit {
   @Input() players;
   @Input() identity;
 
-  public displayedColumns = ['photoURL', 'nombre', 'fechaNacimiento', 'ciudad', 'posicion', 'cedula', 'camiseta', 'altura', 'peso', 'actualizar', 'borrar'];
+  public displayedColumns = ['photoURL', 'nombre', 'apellidos', 'fechaNacimiento', 'ciudad', 'posicion', 'cedula', 'camiseta', 'altura', 'peso', 'actualizar', 'borrar'];
 
   public dataSource = new MatTableDataSource<Player>()
 
@@ -45,7 +49,3 @@ export class PlayerListComponent implements OnInit {
     })
   }
 }
-/* 
- * Copyright 2019 Ignacio Loyola @nodonade.com
- * Version 0.1 (Working first step blog)
- */

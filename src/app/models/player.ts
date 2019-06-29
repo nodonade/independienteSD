@@ -1,6 +1,7 @@
 export interface Player {
    uid: string;
    nombre: string;
+   apellidos: string;
    fechaNacimiento: Date;
    photoURL: string;
    altura: number;

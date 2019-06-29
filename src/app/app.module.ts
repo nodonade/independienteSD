@@ -46,10 +46,11 @@ import { PostListComponent } from './components/post-list/post-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Angular Material
-import { MatTableModule, MatIconModule, MatDatepickerModule, MatNativeDateModule } from '@angular/material';
+import { MatTableModule, MatIconModule, MatDatepickerModule, MatNativeDateModule, MatFormField, MatFormFieldModule, MatInputModule } from '@angular/material';
 import { PlayerComponent } from './components/player/player.component';
 import { PlayerListComponent } from './components/player-list/player-list.component';
 import { PlayerNewComponent } from './components/player-new/player-new.component';
+import { EditPlayerComponent } from './components/edit-player/edit-player.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +71,8 @@ import { PlayerNewComponent } from './components/player-new/player-new.component
     PostListComponent,
     PlayerComponent,
     PlayerListComponent,
-    PlayerNewComponent
+    PlayerNewComponent,
+    EditPlayerComponent
   ],
   imports: [
     BrowserModule,
@@ -85,6 +87,8 @@ import { PlayerNewComponent } from './components/player-new/player-new.component
     FroalaEditorModule.forRoot(),
     FroalaViewModule.forRoot(),
     BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatInputModule,
     MatTableModule,
     MatIconModule,
     MatDatepickerModule,

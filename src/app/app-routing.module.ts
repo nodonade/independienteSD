@@ -29,6 +29,7 @@ import { AuthGuard } from './services/guard/auth.guard';
 import { SecureInnerPagesGuard } from './services/guard/secure-inner-pages.guard';
 import { PlayerListComponent } from './components/player-list/player-list.component';
 import { PlayerNewComponent } from './components/player-new/player-new.component';
+import { EditPlayerComponent } from './components/edit-player/edit-player.component';
 
 
 const routes: Routes = [
@@ -53,6 +54,8 @@ const routes: Routes = [
 
   { path: 'jugadores', component: PlayerListComponent},
   { path: 'crear-jugador', component: PlayerNewComponent},
+  { path: 'editar-jugador/:uid', component: EditPlayerComponent},
+  
 
   { path: 'error', component: ErrorComponent },
   { path: '**', component: ErrorComponent }

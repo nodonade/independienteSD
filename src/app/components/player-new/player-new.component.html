@@ -10,7 +10,7 @@
     </p>
   
     <p *ngIf="player">
-      Modifica el player {{ player.nombre }}
+      Modifica el jugador {{ player.nombre }}
     </p>
     <hr>
   
@@ -27,9 +27,23 @@
           </small>
         </div>
 
-        <input [matDatepicker]="myDatepicker">
+        <div class="form-group">
+          <label for="apellidos">Apellidos</label>
+          <input type="text" name="apellidos" #apellidos="ngModel" [(ngModel)]="player.apellidos" class="form-control" required/>
+  
+          <small *ngIf="!apellidos.valid && apellidos.touched" class="invalid-feedback d-block">
+            Los apellidos no son válidos.
+          </small>
+        </div>
+
+        <label for="fechaNacimiento">Fecha de nacimiento</label>
+        <br/>
+        <input [matDatepicker]="myDatepicker" name="fechaNacimiento" #fechaNacimiento="ngModel" [(ngModel)]="player.fechaNacimiento" required>
         <mat-datepicker-toggle [for]="myDatepicker"></mat-datepicker-toggle>
-        <mat-datepicker #myDatepicker></mat-datepicker>
+        <mat-datepicker #myDatepicker></mat-datepicker> 
+
+        
+
 
         <div class="form-group">
             <label for="ciudad">Ciudad</label>
@@ -40,14 +54,6 @@
             </small>
         </div>
 
-        <div class="form-group">
-            <label for="cedula">Cédula</label>
-            <input type="text" name="cedula" #cedula="ngModel" [(ngModel)]="player.cedula" class="form-control" required/>
-    
-            <small *ngIf="!cedula.valid && cedula.touched" class="invalid-feedback d-block">
-              La cédula no es válida.
-            </small>
-        </div>
 
         <div class="form-group">
             <label for="cedula">Cédula</label>

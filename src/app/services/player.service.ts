@@ -37,8 +37,8 @@ export class PlayerService {
     return this._afs.collection('players').doc(id).valueChanges();
   }
 
-  updatePlayer(player, id) {
-    return this._afs.doc('players/' + player.id).update(player);
+  updatePlayer(player) {
+    return this._afs.doc('players/' + player.uid).update(player);
   }
 
   deletePlayer(id){

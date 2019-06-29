@@ -1,26 +1,16 @@
-/* 
- * Copyright 2019 Ignacio Loyola @nodonade.com
- * Version 0.1 (Working first step blog)
- */
-
-import { AngularFirestore } from '@angular/fire/firestore';
-import { AngularFireStorage, AngularFireUploadTask } from 'angularfire2/storage';
-
-import { PlayerService } from './../../services/player.service';
-import { UserService } from './../../services/user.service';
-
-import { Observable } from 'rxjs';
-import { Router, ActivatedRoute, Params } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-
-import { Player } from '../../models/player';
+import { Player } from 'src/app/models/player';
+import { AngularFireUploadTask, AngularFireStorage } from 'angularfire2/storage';
+import { ActivatedRoute, Router } from '@angular/router';
+import { UserService } from 'src/app/services/user.service';
+import { PlayerService } from 'src/app/services/player.service';
 
 @Component({
-  selector: 'app-player-new',
-  templateUrl: './player-new.component.html',
-  styleUrls: ['./player-new.component.scss']
+  selector: 'app-edit-player',
+  templateUrl: '../player-new/player-new.component.html',
+  styleUrls: ['./edit-player.component.scss']
 })
-export class PlayerNewComponent implements OnInit {
+export class EditPlayerComponent implements OnInit {
 
   public identity;
   public token;
@@ -43,16 +33,37 @@ export class PlayerNewComponent implements OnInit {
    }
    
   ngOnInit() {
-    this.player = {uid :'', nombre: '', apellidos: '', fechaNacimiento: new Date, posicion: '', peso: 80, photoURL: '',
+    this.player = {uid :'', nombre: '', apellidos: '', fechaNacimiento: undefined, posicion: '', peso: 80, photoURL: '',
       altura: 180, cedula: '', camiseta: 1, ciudad: ''};
+      this.readPlayer();
   }
 
   onSubmit(form) {
-    this._playerService.createPlayer(this.player).then(
+    this._playerService.updatePlayer(this.player).then(
       response => {
         this._router.navigate(['/jugadores']);
       }
     );
+  }
+
+  readPlayer(){
+    this._route.params.subscribe(params => {
+      let id = params['uid'];
+
+      this._playerService.readPlayer(id).subscribe(
+        response => {
+          if (response == undefined) {
+            this._router.navigate(['/inicio']);
+          } else {
+            this.player = response as Player;
+          }
+        },
+        error => {
+          console.log(error);
+        }
+      );
+    })
+
   }
 
   upload(event) {
