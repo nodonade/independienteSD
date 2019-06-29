@@ -1,4 +1,6 @@
-# Frontend2
+# IndependienteSD
+
+This project was made for my uncle's basketball team, to organize the players and payments
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.3.
 
