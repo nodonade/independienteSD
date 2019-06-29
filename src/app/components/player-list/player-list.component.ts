@@ -2,13 +2,13 @@
  * Copyright 2019 Ignacio Loyola @nodonade.com
  * Version 0.1 (Working first step blog)
  */
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 
 import { PlayerService } from './../../services/player.service';
 
 import { Player } from './../../models/player';
 
-import { MatTableDataSource } from '@angular/material';
+import { MatTableDataSource, MatSort } from '@angular/material';
 
 @Component({
   selector: 'app-player-list',
@@ -21,7 +21,9 @@ export class PlayerListComponent implements OnInit {
 
   public displayedColumns = ['photoURL', 'nombre', 'apellidos', 'fechaNacimiento', 'ciudad', 'posicion', 'cedula', 'camiseta', 'altura', 'peso', 'actualizar', 'borrar'];
 
-  public dataSource = new MatTableDataSource<Player>()
+  public dataSource = new MatTableDataSource<Player>();
+
+  @ViewChild(MatSort, {static: false}) sort: MatSort;
 
   constructor(
     private _playerService: PlayerService,
@@ -29,6 +31,10 @@ export class PlayerListComponent implements OnInit {
 
   ngOnInit() {
     this.readPlayers();
+  }
+
+  ngAfterViewInit(): void {
+    this.dataSource.sort = this.sort;
   }
 
   readPlayers(){

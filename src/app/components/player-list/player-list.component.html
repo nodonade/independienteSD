@@ -1,4 +1,4 @@
-<table mat-table [dataSource]="dataSource">
+<table mat-table [dataSource]="dataSource" matSort>
 
     <ng-container matColumnDef="photoURL">
         <th mat-header-cell *matHeaderCellDef> Foto </th>
@@ -6,27 +6,27 @@
       </ng-container>
 
     <ng-container matColumnDef="nombre">
-      <th mat-header-cell *matHeaderCellDef> Nombre </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </th>
       <td mat-cell *matCellDef="let player"> {{player.nombre}} </td>
     </ng-container>
 
     <ng-container matColumnDef="apellidos">
-      <th mat-header-cell *matHeaderCellDef> Apellidos </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Apellidos </th>
       <td mat-cell *matCellDef="let player"> {{player.apellidos}} </td>
     </ng-container>
    
     <ng-container matColumnDef="fechaNacimiento">
-      <th mat-header-cell *matHeaderCellDef> Fecha de nacimiento </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha de nacimiento </th>
       <td mat-cell *matCellDef="let player">{{ player.fechaNacimiento.toDate() | date:'dd-MM-yyyy' }} </td>
     </ng-container>
    
     <ng-container matColumnDef="ciudad">
-      <th mat-header-cell *matHeaderCellDef> Ciudad </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Ciudad </th>
       <td mat-cell *matCellDef="let player"> {{player.ciudad}} </td>
     </ng-container>
 
     <ng-container matColumnDef="posicion">
-        <th mat-header-cell *matHeaderCellDef> Posicion </th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Posicion </th>
         <td mat-cell *matCellDef="let player"> {{player.posicion}} </td>
     </ng-container>
     
@@ -36,17 +36,17 @@
     </ng-container>
 
     <ng-container matColumnDef="camiseta">
-        <th mat-header-cell *matHeaderCellDef> Camiseta </th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Camiseta </th>
         <td mat-cell *matCellDef="let player"> {{player.camiseta}} </td>
     </ng-container>
 
     <ng-container matColumnDef="altura">
-        <th mat-header-cell *matHeaderCellDef> Altura </th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Altura </th>
         <td mat-cell *matCellDef="let player"> {{player.altura}} </td>
     </ng-container>
 
     <ng-container matColumnDef="peso">
-        <th mat-header-cell *matHeaderCellDef> Peso </th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Peso </th>
         <td mat-cell *matCellDef="let player"> {{player.peso}} </td>
     </ng-container>
 
