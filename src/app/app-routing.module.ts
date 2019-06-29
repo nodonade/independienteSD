@@ -35,7 +35,7 @@ const routes: Routes = [
 
   { path: 'registro', component: RegisterComponent, /* canActivate: [SecureInnerPagesGuard] */},
 
-  { path: 'jugadores', component: PlayerListComponent},
+  { path: 'jugadores', component: PlayerListComponent, canActivate: [AuthGuard]},
   { path: 'crear-jugador', component: PlayerNewComponent},
   { path: 'editar-jugador/:uid', component: EditPlayerComponent},
   
