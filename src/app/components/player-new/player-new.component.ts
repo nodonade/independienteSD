@@ -44,7 +44,7 @@ export class PlayerNewComponent implements OnInit {
    
   ngOnInit() {
     this.player = {uid :'', nombre: '', apellidos: '', fechaNacimiento: new Date, posicion: '', peso: 80, photoURL: '',
-      altura: 180, cedula: '', camiseta: 1, ciudad: ''};
+      altura: 180, cedula: '', camiseta: 1, ciudad: '', fechaDePago: new Date};
   }
 
   onSubmit(form) {

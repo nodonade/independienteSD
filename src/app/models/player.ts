@@ -10,4 +10,5 @@ export interface Player {
    cedula: string;
    ciudad: string;
    camiseta: number;
+   fechaDePago: Date;
 }

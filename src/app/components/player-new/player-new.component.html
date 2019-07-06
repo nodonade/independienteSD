@@ -38,12 +38,17 @@
 
         <label for="fechaNacimiento">Fecha de nacimiento</label>
         <br/>
-        <input [matDatepicker]="myDatepicker" name="fechaNacimiento" #fechaNacimiento="ngModel" [(ngModel)]="player.fechaNacimiento" date="DD/MM/YYYY" required>
-        <mat-datepicker-toggle [for]="myDatepicker"></mat-datepicker-toggle>
-        <mat-datepicker #myDatepicker ></mat-datepicker> 
-
+        <input [matDatepicker]="myDatepicker" name="fechaNacimiento" #fechaNacimiento="ngModel" [(ngModel)]="player.fechaNacimiento">
+        <mat-datepicker-toggle mattSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+        <mat-datepicker touchUi #myDatepicker ></mat-datepicker>
         
+        <br>
 
+        <label for="fechaDePago">Última fecha de pago</label>
+        <br/>
+        <input [matDatepicker]="fechaDePago" name="fechaDePago" #fechaDePago="ngModel" [(ngModel)]="player.fechaDePago">
+        <mat-datepicker-toggle mattSuffix [for]="fechaDePago"></mat-datepicker-toggle>
+        <mat-datepicker touchUi #fechaDePago ></mat-datepicker>
 
         <div class="form-group">
             <label for="ciudad">Ciudad</label>
@@ -115,7 +120,7 @@
   
         </div>
   
-        <input type="submit" value="Guardar" class="btn" [disabled]="playerNew.invalid">
+        <input type="submit" value="Guardar" class="btn">
   
       </form>
   

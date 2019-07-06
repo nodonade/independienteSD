@@ -10,6 +10,8 @@ import { Player } from './../../models/player';
 
 import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
 
+declare var $: any;
+
 @Component({
   selector: 'app-player-list',
   templateUrl: './player-list.component.html',
@@ -19,7 +21,7 @@ export class PlayerListComponent implements OnInit {
   @Input() players;
   @Input() identity;
 
-  public displayedColumns = ['photoURL', 'nombre', 'apellidos', 'fechaNacimiento', 'ciudad', 'posicion', 'cedula', 'camiseta', 'altura', 'peso', 'actualizar', 'borrar'];
+  public displayedColumns = ['photoURL', 'nombre', 'apellidos', 'fechaNacimiento', 'fechaDePago', 'ciudad', 'posicion', 'cedula', 'camiseta', 'altura', 'peso', 'actualizar', 'borrar'];
 
   public dataSource = new MatTableDataSource<Player>();
 
@@ -43,6 +45,12 @@ export class PlayerListComponent implements OnInit {
     this._playerService.readPlayers().subscribe(
       response => {
         this.dataSource.data = response as Player[];
+        this.dataSource.data.forEach(player => {
+          if ((player.fechaDePago).getMilliseconds() < new Date().getMilliseconds()) {
+            $("#myModal").modal('show');
+            this.readPlayers();
+          }
+        });
       },
       error => {
         console.log(error);

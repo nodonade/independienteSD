@@ -36,7 +36,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // Angular Material
 import { MatPaginatorModule ,MatTableModule, MatIconModule, 
   MatDatepickerModule, MatNativeDateModule, MatFormFieldModule, 
-  MatSortModule, MatInputModule } from '@angular/material';
+  MatSortModule, MatInputModule, MAT_DATE_LOCALE } from '@angular/material';
 import { PlayerComponent } from './components/player/player.component';
 import { PlayerListComponent } from './components/player-list/player-list.component';
 import { PlayerNewComponent } from './components/player-new/player-new.component';
@@ -80,7 +80,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
   ],
   providers: [
     AuthenticationService,
-    { provide: FirestoreSettingsToken, useValue: {} }
+    { provide: FirestoreSettingsToken, useValue: {} },
+    { provide: MAT_DATE_LOCALE, useValue: 'en-GB' }
   ],
   bootstrap: [AppComponent]
 })

@@ -34,7 +34,7 @@ export class EditPlayerComponent implements OnInit {
    
   ngOnInit() {
     this.player = {uid :'', nombre: '', apellidos: '', fechaNacimiento: undefined, posicion: '', peso: 80, photoURL: '',
-      altura: 180, cedula: '', camiseta: 1, ciudad: ''};
+      altura: 180, cedula: '', camiseta: 1, ciudad: '', fechaDePago: undefined};
       this.readPlayer();
   }
 
