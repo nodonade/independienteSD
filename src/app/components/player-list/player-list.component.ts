@@ -46,9 +46,8 @@ export class PlayerListComponent implements OnInit {
       response => {
         this.dataSource.data = response as Player[];
         this.dataSource.data.forEach(player => {
-          if ((player.fechaDePago).getMilliseconds() < new Date().getMilliseconds()) {
+          if (player.fechaDePago.toDate() < new Date (new Date().getFullYear(), new Date().getMonth(), 1)) { // I know this is poorly made, please forgive me I'm still a noob
             $("#myModal").modal('show');
-            this.readPlayers();
           }
         });
       },

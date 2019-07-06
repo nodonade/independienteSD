@@ -81,7 +81,7 @@
               <!-- Modal footer -->
               <div class="modal-footer">
                 <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
-                <a (click)="deletePlayer(player.uid)" class="btn btn-danger" data-dismiss="modal">Borrar</a>
+                <a [routerLink]="['/editar-jugador', player.uid]" class="btn btn-success" data-dismiss="modal">Actualizar</a>
               </div>
     
             </div>
