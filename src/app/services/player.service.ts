@@ -16,7 +16,8 @@ export class PlayerService {
 
   constructor(   
     private _afs: AngularFirestore
-    ) { }
+    ) {
+     }
 
     /*
    * For creating a post we generate an id and then asign

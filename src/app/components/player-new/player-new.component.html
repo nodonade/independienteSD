@@ -112,9 +112,6 @@
   
           <label for="image">Imagen</label>
   
-          <div *ngIf="is_edit && player.image">
-            <img src="{{player.photoURL}}" class="w-100"/>
-          </div>
   
           <input type="file" (change)="upload($event)" accept=".png,.jpg" #image/>
   

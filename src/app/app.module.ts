@@ -43,6 +43,7 @@ import { PlayerNewComponent } from './components/player-new/player-new.component
 import { EditPlayerComponent } from './components/edit-player/edit-player.component';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     PlayerComponent,
     PlayerListComponent,
     PlayerNewComponent,
-    EditPlayerComponent
+    EditPlayerComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,

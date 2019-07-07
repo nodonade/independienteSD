@@ -10,6 +10,8 @@ import { Player } from './../../models/player';
 
 import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
 
+import { AngularFirestore } from '@angular/fire/firestore';
+
 declare var $: any;
 
 @Component({
@@ -30,6 +32,7 @@ export class PlayerListComponent implements OnInit {
 
   constructor(
     private _playerService: PlayerService,
+    private _afs: AngularFirestore
   ) { }
 
   ngOnInit() {
@@ -46,6 +49,7 @@ export class PlayerListComponent implements OnInit {
       response => {
         this.dataSource.data = response as Player[];
         this.dataSource.data.forEach(player => {
+          // @ts-ignore
           if (player.fechaDePago.toDate() < new Date (new Date().getFullYear(), new Date().getMonth(), 1)) { // I know this is poorly made, please forgive me I'm still a noob
             $("#myModal").modal('show');
           }
